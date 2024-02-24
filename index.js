@@ -6,14 +6,21 @@ backArrow = document.querySelector('.back-arrow'),
 bg = document.querySelector('.bg'),
 body = document.querySelector('body');
 
-toggleBtn.addEventListener('click', () => {
+
+function toggleBtnMenu() {
     toggleMenu.classList.toggle('translate-x-[570px]')
-    body.setAttribute('class', 'overflow-y-hidden')
     bg.classList.toggle('hidden')
+    body.classList.toggle('overflow-y-hidden')
+}
+
+toggleBtn.addEventListener('click', () => {
+    toggleBtnMenu()
 })
 
 backArrow.addEventListener('click', () => {
-    toggleMenu.classList.toggle('translate-x-[570px]')
-    body.setAttribute('class', 'overflow-y-scroll')
-    bg.classList.toggle('hidden')
+    toggleBtnMenu()
+})
+
+bg.addEventListener('click', () => {
+    toggleBtnMenu()
 })
